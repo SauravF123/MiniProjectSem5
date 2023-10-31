@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Educational Records V2</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-container">
+            <button id="user-btn" onclick="showUserMode()">User</button>
+            <button id="admin-btn" onclick="showAdminMode()">Admin</button>
+        </div>
+        <div class="content-container">
+            <div id="user-search" class="hidden">
+                <label for="searchById">Search by Adhar Number:</label>
+                <input type="text" id="searchById">
+                <label for="searchByYear">Search by Year:</label>
+                <input type="text" id="searchByYear">
+                <label for="searchByDistrict">Search by District:</label>
+                <input type="text" id="searchByDistrict">
+                <button onclick="searchRecords()">Search</button>
+                <div id="result-container" class="card-container"></div>
+            </div>
+            <div id="admin-login" class="hidden">
+                <label for="adminUsername">Admin Username:</label>
+                <input type="text" id="adminUsername">
+                <label for="adminPassword">Admin Password:</label>
+                <input type="password" id="adminPassword">
+                <button onclick="adminLogin()">Login</button>
+            </div>
+            <div id="admin-upload" class="hidden">
+                <h2>Upload Education Data</h2>
+                <input type="file" id="excelFile" accept=".xlsx">
+                <button onclick="uploadExcel()">Upload Excel</button>
+                <div id="admin-upload-results" class="card-container"></div>
+            </div>
+        </div>
+    </div>
+<button onclick="clearScreen()" class="clear-screen">Clear Screen</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
